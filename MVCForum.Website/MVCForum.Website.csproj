@@ -1039,6 +1039,20 @@
     <Content Include="Scripts\tinymce\themes\modern\theme.min.js" />
     <Content Include="Scripts\tinymce\tinymce.js" />
     <Content Include="Scripts\tinymce\tinymce.min.js" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumli.svg" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumsb.svg" />
+    <Content Include="Themes\Verdant\Content\Images\apple-touch-icon-57-precomposed.png" />
+    <Content Include="Themes\Verdant\Content\Images\arrow-spinner-blue.gif" />
+    <Content Include="Themes\Verdant\Content\Images\favicon.ico" />
+    <Content Include="Themes\Verdant\Content\Images\logo.png" />
+    <Content Include="Themes\Verdant\Content\Scripts\general.js" />
+    <Content Include="Themes\Verdant\Content\Styles\imports.css" />
+    <Content Include="Themes\Verdant\Content\Styles\Theme.css">
+      <DependentUpon>Theme.scss</DependentUpon>
+    </Content>
+    <Content Include="Themes\Verdant\Content\Styles\Theme.min.css">
+      <DependentUpon>Theme.css</DependentUpon>
+    </Content>
     <Content Include="Views\Shared\_SlideOutPanel.cshtml" />
     <Content Include="Views\Post\GetAllPostLikes.cshtml" />
     <Content Include="Views\File\ImageUploadTinyMce.cshtml" />
@@ -1057,6 +1071,16 @@
     <Content Include="Scripts\tinymce\langs\readme.md" />
     <None Include="Properties\PublishProfiles\verdant-forum - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\verdant-forum.pubxml" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumli.eot" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumli.ttf" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumli.woff" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumsb.eot" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumsb.ttf" />
+    <Content Include="Themes\Verdant\Content\Fonts\mvcforumsb.woff" />
+    <Content Include="Themes\Verdant\Content\Styles\Theme.scss" />
+    <Content Include="Themes\Verdant\Content\Styles\Theme.css.map">
+      <DependentUpon>Theme.css</DependentUpon>
+    </Content>
     <None Include="_bin_deployableAssemblies\x86\sqlcese40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceqp40.dll" />
     <None Include="_bin_deployableAssemblies\x86\sqlceme40.dll" />
