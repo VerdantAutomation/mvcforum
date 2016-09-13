@@ -19,11 +19,17 @@ namespace MVCForum.Services
         private readonly IMembershipUserPointsService _membershipUserPointsService;
         private readonly ISettingsService _settingsService;
         private readonly ILocalizationService _localizationService;
+        private readonly IVoteService _voteService;
+        private readonly IFavouriteService _favouriteService;
+        private readonly IUploadedFileService _uploadedFileService;
 
-        public PostService(IMembershipUserPointsService membershipUserPointsService,
+        public PostService(IMembershipUserPointsService membershipUserPointsService, IVoteService voteService, IFavouriteService favouriteService, IUploadedFileService uploadedFileService,
             ISettingsService settingsService, IRoleService roleService, IPostRepository postRepository, ITopicRepository topicRepository,
             ILocalizationService localizationService)
         {
+            _voteService = voteService;
+            _favouriteService = favouriteService;
+            _uploadedFileService = uploadedFileService;
             _postRepository = postRepository;
             _topicRepository = topicRepository;
             _roleService = roleService;
@@ -228,6 +234,27 @@ namespace MVCForum.Services
 
             // Also the mark as solution
             _membershipUserPointsService.Delete(PointsFor.Solution, post.Id);
+
+            // remove likes
+            var postLikes = post.Votes.ToList();
+            foreach (var like in postLikes)
+            {
+                _voteService.Delete(like);
+            }
+
+            // remove favorites
+            var postFavorites = post.Favourites.ToList();
+            foreach (var favorite in postFavorites)
+            {
+                _favouriteService.Delete(favorite);
+            }
+
+            // remove uploaded files
+            var postUploads = post.Files.ToList();
+            foreach (var postUploadedFile in postUploads)
+            {
+                _uploadedFileService.Delete(postUploadedFile);
+            }
 
             #endregion
 
